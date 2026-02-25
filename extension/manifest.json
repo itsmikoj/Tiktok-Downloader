@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "TikTok Downloader",
+  "version": "2.0.0",
+  "description": "Descarga videos de TikTok sin marca de agua con un solo clic.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "downloads",
+    "storage",
+    "contextMenus",
+    "windows"
+  ],
+  "host_permissions": [
+    "*://*.tiktok.com/*",
+    "*://*.tiktokv.us/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "pages/popup.html",
+    "default_icon": "logo.png"
+  },
+  "commands": {
+    "download-video": {
+      "suggested_key": {
+        "default": "Alt+D",
+        "mac": "Alt+D"
+      },
+      "description": "Descargar video de TikTok"
+    }
+  }
+}

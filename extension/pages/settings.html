@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>TikTok Downloader — Configuración</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 420px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 28px 24px;
+    }
+
+    /* ── Header ── */
+    .header { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+    .header-icon { font-size: 26px; }
+    .header-title { font-size: 16px; font-weight: 700; }
+    .header-sub { font-size: 11px; color: #555; margin-top: 2px; }
+
+    /* ── Field ── */
+    label {
+      display: block;
+      font-size: 11px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    input[type="text"]:focus { border-color: #fe2c55; }
+
+    .hint {
+      margin: 8px 0 22px;
+      font-size: 11px;
+      color: #3a3a3a;
+      line-height: 1.7;
+    }
+    .hint code {
+      background: #1e1e1e;
+      border: 1px solid #2a2a2a;
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: #666;
+      font-size: 10px;
+    }
+
+    /* ── Shortcut row ── */
+    .shortcut {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a1a1a;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 22px;
+    }
+    .shortcut-label { font-size: 12px; color: #555; }
+    .keys { display: flex; gap: 4px; }
+    kbd {
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      color: #aaa;
+      font-family: inherit;
+    }
+
+    /* ── Actions ── */
+    .actions { display: flex; gap: 8px; }
+    #btn-save {
+      flex: 1;
+      padding: 11px;
+      background: #fe2c55;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    #btn-save:hover { background: #d9244a; }
+    #btn-shortcut {
+      padding: 11px 14px;
+      background: #1a1a1a;
+      color: #888;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    #btn-shortcut:hover { border-color: #3a3a3a; color: #bbb; }
+
+    /* ── Toast ── */
+    #toast {
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: #0d2b0d;
+      border: 1px solid #1a4a1a;
+      border-radius: 8px;
+      color: #5cb85c;
+      font-size: 12px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+    }
+    #toast.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="header-icon">⬇️</span>
+    <div>
+      <div class="header-title">TikTok Downloader</div>
+      <div class="header-sub">Configuración</div>
+    </div>
+  </div>
+
+  <label for="path-input">Carpeta de destino</label>
+  <input type="text" id="path-input" placeholder="TikTok" autocomplete="off" spellcheck="false" />
+  <p class="hint">
+    Relativa a tu carpeta Descargas. Los videos se guardan en<br />
+    <code>Descargas / TikTok / @usuario / tiktok_ID.mp4</code>
+  </p>
+
+  <div class="shortcut">
+    <span class="shortcut-label">Atajo de descarga</span>
+    <div class="keys"><kbd>Alt</kbd><kbd>D</kbd></div>
+  </div>
+
+  <div class="actions">
+    <button id="btn-save">Guardar</button>
+    <button id="btn-shortcut">Cambiar atajo</button>
+  </div>
+
+  <div id="toast">✅ Guardado correctamente</div>
+
+  <script src="settings.js" type="module"></script>
+</body>
+</html>

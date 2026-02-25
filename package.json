@@ -1,0 +1,17 @@
+{
+  "name": "tiktok-downloader",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Chrome extension — download TikTok videos without watermark",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && tsc -p tsconfig.build.json && node build.js",
+    "dev": "tsc -p tsconfig.build.json --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "typescript": "^5.9.3"
+  }
+}
