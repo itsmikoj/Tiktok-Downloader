@@ -22,3 +22,5 @@ The compiled extension will be in the `dist/` folder.
 2. Enable "Developer mode"
 3. Click "Load unpacked"
 4. Select the `dist/` folder
+
+##
